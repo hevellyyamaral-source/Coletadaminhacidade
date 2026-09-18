@@ -1,0 +1,823 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --verde: #16823b;
+    --verde-escuro: #0c5426;
+    --verde-claro: #e4f6e9;
+    --fundo: #f5faf6;
+    --branco: #ffffff;
+    --texto: #173b25;
+    --cinza: #637568;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 75px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.95);
+
+    border-bottom: 1px solid #dce9df;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--verde);
+}
+
+.logo span {
+    font-size: 25px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #42604b;
+
+    transition: .2s;
+}
+
+nav a:hover {
+    color: var(--verde);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            #c9efd4,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #e5f7e9,
+            #ffffff
+        );
+}
+
+.hero-conteudo {
+    max-width: 650px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    background: #d4f1dc;
+
+    color: var(--verde);
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: var(--cinza);
+
+    margin-bottom: 30px;
+}
+
+.botoes {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 22px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.principal {
+    background: var(--verde);
+
+    color: white;
+}
+
+.principal:hover {
+    background: var(--verde-escuro);
+
+    transform: translateY(-3px);
+}
+
+.secundario {
+    background: white;
+
+    color: var(--verde);
+
+    border: 2px solid #cde4d3;
+}
+
+.secundario:hover {
+    border-color: var(--verde);
+}
+
+.simbolo {
+    font-size: 190px;
+
+    filter: drop-shadow(
+        0 15px 15px rgba(0,0,0,.08)
+    );
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+}
+
+
+/* =========================
+   PRÓXIMA COLETA
+========================= */
+
+.proxima {
+    margin: -35px auto 0;
+
+    position: relative;
+
+    width: 84%;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 45px rgba(20,70,35,.1);
+}
+
+.proxima-icon {
+    width: 60px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--verde-claro);
+
+    border-radius: 15px;
+
+    font-size: 28px;
+}
+
+.proxima small {
+    color: var(--verde);
+
+    font-weight: 800;
+}
+
+.proxima h2 {
+    margin: 4px 0;
+
+    font-size: 22px;
+}
+
+.proxima p {
+    color: var(--cinza);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    padding: 90px 8%;
+}
+
+.titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.titulo > span {
+    font-size: 40px;
+}
+
+.titulo h2 {
+    font-size: 32px;
+}
+
+.titulo p {
+    color: var(--cinza);
+
+    margin-top: 5px;
+}
+
+.centralizado {
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.filtro {
+    padding: 10px 16px;
+
+    border: 1px solid #d3e3d7;
+
+    background: white;
+
+    color: #42604b;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--verde);
+
+    color: white;
+
+    border-color: var(--verde);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px,1fr));
+
+    gap: 18px;
+}
+
+.card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    border: 1px solid #dfebe2;
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(20,70,35,.08);
+}
+
+.card-dia {
+    color: var(--verde);
+
+    font-weight: 900;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--cinza);
+
+    margin-top: 7px;
+}
+
+
+/* =========================
+   RUAS
+========================= */
+
+.ruas {
+    padding: 90px 8%;
+
+    background: #e7f5eb;
+
+    text-align: center;
+}
+
+.busca {
+    max-width: 700px;
+
+    margin: auto;
+
+    display: flex;
+}
+
+.busca input {
+    flex: 1;
+
+    padding: 18px;
+
+    border: 2px solid #cce1d1;
+
+    border-radius: 12px 0 0 12px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.busca input:focus {
+    border-color: var(--verde);
+}
+
+.busca button {
+    padding: 0 25px;
+
+    border: none;
+
+    background: var(--verde);
+
+    color: white;
+
+    font-weight: 800;
+
+    border-radius: 0 12px 12px 0;
+
+    cursor: pointer;
+}
+
+#filtroBairro {
+    margin-top: 15px;
+
+    padding: 13px 18px;
+
+    border: 1px solid #cce1d1;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font-size: 15px;
+}
+
+.resultado {
+    max-width: 700px;
+
+    min-height: 150px;
+
+    margin: 25px auto 0;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    border-left: 5px solid var(--verde);
+
+    box-shadow:
+        0 10px 30px rgba(20,70,35,.06);
+}
+
+.resultado-vazio {
+    text-align: center;
+
+    color: var(--cinza);
+}
+
+.resultado-vazio span {
+    font-size: 35px;
+}
+
+.resultado h3 {
+    color: var(--verde);
+
+    margin-bottom: 12px;
+}
+
+.resultado p {
+    margin: 8px 0;
+
+    color: #52665a;
+}
+
+
+/* =========================
+   MAPA
+========================= */
+
+.mapa-section {
+    padding: 80px 8%;
+}
+
+.mapa {
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.1);
+}
+
+.mapa iframe {
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================
+   RECICLAGEM
+========================= */
+
+.reciclagem {
+    padding: 90px 8%;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 50px;
+
+    background: white;
+
+    align-items: center;
+}
+
+.reciclagem h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.reciclagem-texto p {
+    color: var(--cinza);
+
+    line-height: 1.7;
+}
+
+.materiais {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.material {
+    padding: 25px;
+
+    border-radius: 18px;
+}
+
+.material span {
+    font-size: 35px;
+}
+
+.material h3 {
+    margin: 8px 0;
+}
+
+.material p {
+    color: #637568;
+}
+
+.papel {
+    background: #e9f1ff;
+}
+
+.plastico {
+    background: #ffe8e8;
+}
+
+.vidro {
+    background: #e4f7e8;
+}
+
+.metal {
+    background: #fff5cf;
+}
+
+
+/* =========================
+   DICAS
+========================= */
+
+.dicas {
+    padding: 90px 8%;
+}
+
+.dicas-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.dicas-grid div {
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #dfebe2;
+}
+
+.dicas-grid span {
+    font-size: 35px;
+}
+
+.dicas-grid h3 {
+    margin: 15px 0 8px;
+}
+
+.dicas-grid p {
+    color: var(--cinza);
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+    padding: 80px 8%;
+
+    background: var(--verde-escuro);
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.contato h2 {
+    font-size: 38px;
+
+    margin: 10px 0;
+}
+
+.contato p {
+    color: #c9dfcf;
+
+    line-height: 1.6;
+}
+
+.contato-card {
+    padding: 30px;
+
+    background: rgba(255,255,255,.1);
+
+    border-radius: 18px;
+}
+
+.contato-card p {
+    margin-bottom: 12px;
+}
+
+.contato-card a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #79df96;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 8%;
+
+    background: #082b16;
+
+    color: white;
+
+    text-align: center;
+}
+
+footer .logo {
+    color: #70d88c;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #a8c3ae;
+
+    margin-top: 7px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width: 750px) {
+
+    header {
+        height: auto;
+
+        padding: 18px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 10px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        text-align: center;
+
+        flex-direction: column;
+
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .simbolo {
+        font-size: 110px;
+    }
+
+    .proxima {
+        width: 90%;
+    }
+
+    .busca {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .busca input,
+    .busca button {
+        border-radius: 10px;
+
+        padding: 16px;
+    }
+
+    .reciclagem {
+        grid-template-columns: 1fr;
+    }
+
+    .dicas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato {
+        grid-template-columns: 1fr;
+    }
+
+    .materiais {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa {
+        height: 300px;
+    }
+
+  }
