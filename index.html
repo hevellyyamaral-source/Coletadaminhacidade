@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coleta Mirandiba ♻️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span>♻️</span>
+        Coleta Mirandiba
+    </div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#ruas">Minha Rua</a>
+        <a href="#reciclagem">Reciclagem</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- INÍCIO -->
+
+<section id="inicio" class="hero">
+
+    <div class="hero-conteudo">
+
+        <span class="etiqueta">
+            ♻️ MIRANDIBA — PERNAMBUCO
+        </span>
+
+        <h1>
+            Uma cidade limpa começa com cada um de nós.
+        </h1>
+
+        <p>
+            Consulte o cronograma da coleta de lixo,
+            encontre sua rua e saiba quando colocar
+            o lixo para coleta.
+        </p>
+
+        <div class="botoes">
+
+            <a href="#ruas" class="btn principal">
+                🔎 Encontrar minha rua
+            </a>
+
+            <a href="#cronograma" class="btn secundario">
+                📅 Ver cronograma
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="simbolo">
+        ♻️
+    </div>
+
+</section>
+
+
+<!-- PRÓXIMA COLETA -->
+
+<section class="proxima">
+
+    <div class="proxima-icon">
+        🗑️
+    </div>
+
+    <div>
+
+        <small>PRÓXIMA COLETA</small>
+
+        <h2 id="proximaColeta">
+            Consulte sua rua
+        </h2>
+
+        <p>
+            Pesquise sua rua para descobrir
+            o próximo dia e horário.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CRONOGRAMA -->
+
+<section id="cronograma" class="section">
+
+    <div class="titulo">
+
+        <span>📅</span>
+
+        <div>
+            <h2>Cronograma semanal</h2>
+
+            <p>
+                Confira a programação da coleta.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="filtros">
+
+        <button onclick="filtrarDia('todos')" class="filtro ativo">
+            Todos
+        </button>
+
+        <button onclick="filtrarDia('segunda')" class="filtro">
+            Segunda
+        </button>
+
+        <button onclick="filtrarDia('terca')" class="filtro">
+            Terça
+        </button>
+
+        <button onclick="filtrarDia('quarta')" class="filtro">
+            Quarta
+        </button>
+
+        <button onclick="filtrarDia('quinta')" class="filtro">
+            Quinta
+        </button>
+
+        <button onclick="filtrarDia('sexta')" class="filtro">
+            Sexta
+        </button>
+
+    </div>
+
+
+    <div id="cardsCronograma" class="cards"></div>
+
+</section>
+
+
+<!-- PESQUISA DE RUAS -->
+
+<section id="ruas" class="ruas">
+
+    <div class="titulo centralizado">
+
+        <span>📍</span>
+
+        <div>
+            <h2>Encontre sua rua</h2>
+
+            <p>
+                Descubra o dia e horário da coleta.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="busca">
+
+        <input
+            type="text"
+            id="campoRua"
+            placeholder="Digite o nome da rua..."
+        >
+
+        <button onclick="buscarRua()">
+            🔎 Buscar
+        </button>
+
+    </div>
+
+
+    <select id="filtroBairro" onchange="filtrarBairro()">
+
+        <option value="todos">
+            Todos os bairros
+        </option>
+
+    </select>
+
+
+    <div id="resultadoRua" class="resultado">
+
+        <div class="resultado-vazio">
+            <span>🔎</span>
+
+            <h3>
+                Pesquise uma rua
+            </h3>
+
+            <p>
+                Digite o nome da sua rua acima.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MAPA -->
+
+<section class="mapa-section">
+
+    <div class="titulo">
+
+        <span>🗺️</span>
+
+        <div>
+            <h2>Mirandiba no mapa</h2>
+
+            <p>
+                Localização do município.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="mapa">
+
+        <iframe
+            src="https://www.google.com/maps?q=Mirandiba,+Pernambuco&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+<!-- RECICLAGEM -->
+
+<section id="reciclagem" class="reciclagem">
+
+    <div class="reciclagem-texto">
+
+        <span class="etiqueta">
+            🌱 SUSTENTABILIDADE
+        </span>
+
+        <h2>
+            Separe o lixo corretamente.
+        </h2>
+
+        <p>
+            A separação dos resíduos facilita a reciclagem
+            e ajuda a manter as ruas mais limpas.
+        </p>
+
+    </div>
+
+
+    <div class="materiais">
+
+        <div class="material papel">
+            <span>📄</span>
+            <h3>Papel</h3>
+            <p>Jornais, caixas e folhas.</p>
+        </div>
+
+
+        <div class="material plastico">
+            <span>🥤</span>
+            <h3>Plástico</h3>
+            <p>Garrafas e embalagens.</p>
+        </div>
+
+
+        <div class="material vidro">
+            <span>🍾</span>
+            <h3>Vidro</h3>
+            <p>Garrafas e recipientes.</p>
+        </div>
+
+
+        <div class="material metal">
+            <span>🥫</span>
+            <h3>Metal</h3>
+            <p>Latas e embalagens metálicas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DICAS -->
+
+<section class="dicas">
+
+    <div class="titulo">
+
+        <span>🌱</span>
+
+        <div>
+            <h2>Pequenas atitudes fazem diferença</h2>
+
+            <p>
+                Ajude a cuidar de Mirandiba.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="dicas-grid">
+
+        <div>
+            <span>🗑️</span>
+            <h3>Coloque no horário</h3>
+            <p>
+                Evite colocar o lixo muito antes da coleta.
+            </p>
+        </div>
+
+
+        <div>
+            <span>♻️</span>
+            <h3>Separe os materiais</h3>
+            <p>
+                Separe os resíduos sempre que possível.
+            </p>
+        </div>
+
+
+        <div>
+            <span>🌳</span>
+            <h3>Cuide das ruas</h3>
+            <p>
+                Não jogue lixo em terrenos ou vias públicas.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section id="contato" class="contato">
+
+    <div>
+
+        <span class="etiqueta">
+            📞 CONTATO
+        </span>
+
+        <h2>
+            Precisa de informação?
+        </h2>
+
+        <p>
+            Consulte os canais oficiais da Prefeitura
+            de Mirandiba.
+        </p>
+
+    </div>
+
+
+    <div class="contato-card">
+
+        <p>🏛️ Prefeitura de Mirandiba</p>
+
+        <p>📞 (87) 99940-0015</p>
+
+        <p>
+            📍 Rua José Torres da Silva Araquan,
+            s/n — Mirandiba/PE
+        </p>
+
+        <a
+            href="https://mirandiba.pe.gov.br/"
+            target="_blank"
+        >
+            Acessar site oficial →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        ♻️ Coleta Mirandiba
+    </div>
+
+    <p>
+        Projeto de informação e conscientização ambiental.
+    </p>
+
+    <p>
+        © 2026 — Mirandiba, Pernambuco
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+  </html>
